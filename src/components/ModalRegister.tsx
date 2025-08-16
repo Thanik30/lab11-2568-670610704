@@ -53,7 +53,7 @@ export default function ModalRegister() {
 
   const cdAgree = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAgree(event.target.checked);
-  }
+  };
 
   // ----------------------------------------------------------------
 
@@ -83,24 +83,26 @@ export default function ModalRegister() {
       setFnameError(true);
     }
 
-    if (fnameOk) {
-      let lnameOk = true;
+    let lnameOk = true;
     if (lname === "") {
       lnameOk = false;
       setLnameError(true);
     }
+
     let planOk = true;
     if (plan === "") {
       planOk = false;
       setPlanError(true);
     }
+
     let genderOk = true;
     if (gender === "") {
       genderOk = false;
       setGenderError(true);
     }
+
     if (fnameOk && lnameOk && planOk && genderOk) {
-       alert(
+      alert(
         `Registration complete. Please pay money for ${computeTotalPayment().toLocaleString()} THB.`
       );
     }
@@ -236,18 +238,19 @@ export default function ModalRegister() {
             </div>
           </div>
           <div className="modal-footer">
-            {/* Terms and conditions */}
+             <div className="modal-footer d-flex flex-column align-items-center gap-2">
             <div>
-              <input className="me-2 form-check-input" 
-              type="checkbox" 
-              onChange={cdAgree}
-              checked={agree}
-              />I agree to the terms and conditions
+              <input 
+                className="mx-2 form-check-input" 
+                type="checkbox" 
+                onChange={cdAgree}
+                checked={agree}
+              />
+              I agree to the terms and conditions
             </div>
-            <input className="me-2 form-check-input" type="checkbox" />I agree
-              to the terms and conditions
+            
             <button
-              className="btn btn-success my-2"
+              className="btn btn-success w-100"
               onClick={registerBtnOnClick}
                disabled={!agree}
             >
@@ -257,6 +260,8 @@ export default function ModalRegister() {
         </div>
       </div>
     </div>
+  </div>
   );
+  
 }
-}
+
