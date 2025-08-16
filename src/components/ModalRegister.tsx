@@ -9,7 +9,7 @@ export default function ModalRegister() {
   const [buyCap, setBuyCap] = useState(false);
   // add more state variables:
   const [plan, setPlan] = useState("");
-   const [planError, setPlanError] = useState(false)
+  const [planError, setPlanError] = useState(false)
   const [gender, setGender] = useState("");
   const [genderError, setGenderError] = useState(false);
   const [agree, setAgree] = useState(false);
@@ -100,6 +100,9 @@ export default function ModalRegister() {
       setGenderError(true);
     }
     if (fnameOk && lnameOk && planOk && genderOk) {
+       alert(
+        `Registration complete. Please pay money for ${computeTotalPayment().toLocaleString()} THB.`
+      );
     }
   };
 
@@ -241,7 +244,8 @@ export default function ModalRegister() {
               checked={agree}
               />I agree to the terms and conditions
             </div>
-            {/* Register Button */}
+            <input className="me-2 form-check-input" type="checkbox" />I agree
+              to the terms and conditions
             <button
               className="btn btn-success my-2"
               onClick={registerBtnOnClick}
