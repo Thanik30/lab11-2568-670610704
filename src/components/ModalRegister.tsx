@@ -237,7 +237,7 @@ export default function ModalRegister() {
               
             </div>
           </div>
-          <div className="modal-footer">
+          
              <div className="modal-footer d-flex flex-column align-items-center gap-2">
             <div>
               <input 
@@ -260,7 +260,6 @@ export default function ModalRegister() {
         </div>
       </div>
     </div>
-  </div>
   );
   
 }
